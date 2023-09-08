@@ -1,10 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const eventSchema = new Schema({
-  imagen: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: true,
@@ -16,7 +12,7 @@ const eventSchema = new Schema({
   date: {
     type: Date,
     required: true,
-    default: Date.now,
+    default: Date.now(),
   },
   price: {
     type: Number,
@@ -26,6 +22,14 @@ const eventSchema = new Schema({
     type: Number,
     required: true,
   },
+  image: {
+    type: String,
+    required: true,
+  },
+  eventOwner: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  }, 
   bookings: [{
     type: Schema.Types.ObjectId,
     ref: "User",
