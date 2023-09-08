@@ -1,14 +1,17 @@
 import React from 'react'
 import { Link } from "react-scroll";
+import Logo from '../assets/eventlogo.png'
 
 const Navbar = () => {
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-gray-500 text-white">
+    <div className="fixed w-screen h-[100px] flex justify-between items-center px-4 bg-gray-500 text-white">
       <div>
         <ul className="flex">
           <li>
             <Link to="" smooth={true} duration={500}>
-              
+              <div>
+              <img className='w-60 h-60 object-scale-down' src={Logo} alt="EventLogo"/>
+              </div>
             </Link>
           </li>
         </ul>

@@ -6,17 +6,14 @@
     html{
      font-family: Proxima Nova, system-ui, sans-serif;
     }
-    .card {
-        background-color: theme('colors.white');
-        border-radius: theme('borderRadius.lg');
-        padding: theme('spacing.6');
-        box-shadow: theme('boxShadow.xl');
-        width: 40%
-      }
      
      li{
        @apply px-4;
-       @apply cursor-pointer font-bold 
+       @apply cursor-pointer font-bold;
+     }
+
+     p{
+      @apply text-center;
      }
    }
    .content-div{

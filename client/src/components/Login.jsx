@@ -2,7 +2,7 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <div className="bg-white  rounded-2xl shadow-2xl md:w-1/3 items-center max-w-4xl transition duration-1000 ease-out w-screen p-4 flex flex-col justify-center h-screen ">
+    <div name='login' className="bg-white  rounded-2xl shadow-2xl md:w-1/3 items-center max-w-4xl transition duration-1000 ease-out w-screen p-4 flex flex-col justify-center h-screen ">
              <h2 className='p-3 text-3xl font-bold text-pink-400'></h2>
              <div className="inline-block border-[1px] justify-center w-20 border-blue-400 border-solid"></div>
              <h3 className='text-xl font-semibold text-blue-400 pt-2'>Sign In!</h3>
