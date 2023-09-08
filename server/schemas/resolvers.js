@@ -1,27 +1,38 @@
-const { Tech, Matchup } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
+const { User, Event } = require('../models');
 
 const resolvers = {
   Query: {
-    tech: async () => {
-      return Tech.find({});
+    user: async () => {
+      return User.find({});
     },
-    matchups: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Matchup.find(params);
+    myEvents: async (parent, { _id }) => {
+      return Event.find( {eventOwner: _id}).populate('bookings');
     },
+    publicEvents: async () => {
+      return Event.find({});
+    }
   },
+
   Mutation: {
-    createMatchup: async (parent, args) => {
-      const matchup = await Matchup.create(args);
-      return matchup;
+    createUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+      return { token, user} ;
     },
-    createVote: async (parent, { _id, techNum }) => {
-      const vote = await Matchup.findOneAndUpdate(
-        { _id },
-        { $inc: { [`tech${techNum}_votes`]: 1 } },
-        { new: true }
-      );
-      return vote;
+
+    createMyEvents: async (parent, args) => {
+      const myEvents = await Event.create(args);
+      return myEvents;
+    },
+    createEventBooking: async (parent, args, context) => {
+      const booking = await Event.findByIdAndUpdate(
+        args.eventId,
+        { $push: {bookings:context.user.id}}
+
+      )
+      return booking;
     },
   },
 };
