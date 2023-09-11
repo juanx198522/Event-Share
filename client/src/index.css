@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+    html{
+     font-family: Proxima Nova, system-ui, sans-serif;
+    }
+     
+     li{
+       @apply px-4;
+       @apply cursor-pointer font-bold;
+     }
+
+     p{
+      @apply text-center;
+     }
+   }
+   .content-div{
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     height: 250px;
+   }
