@@ -4,15 +4,17 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Events from './components/Events'
 import Create from './components/Create'
+import Cart from './components/Cart'
 
 function App() {
   return (
-    <div>
+    <div className='justify-space'>
       <Navbar/>
       <Home/>
       <Events/>
       <Login/>
       <Create/>
+      <Cart/>
 
     </div>
   );

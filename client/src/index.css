@@ -15,6 +15,14 @@
      p{
       @apply text-center;
      }
+     input{
+      @apply rounded;
+      @apply my-2;
+      @apply p-2;
+     }
+    button{
+      @apply rounded;
+    }
    }
    .content-div{
      background-repeat: no-repeat;
