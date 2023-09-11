@@ -1,20 +1,27 @@
 import React from 'react';
+
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar'
-import Home from './components/Home'
-import Login from './components/Login'
-import Events from './components/Events'
-import Create from './components/Create'
-import Cart from './components/Cart'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Events from './pages/Events'
+import MyEvents from './pages/MyEvents'
+import Booking from './pages/Booking'
 
 function App() {
   return (
-    <div className='justify-space'>
-      <Navbar/>
-      <Home/>
-      <Events/>
-      <Login/>
-      <Create/>
-      <Cart/>
+    <div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/events' element={<Events />} />
+          <Route path='/myevents' element={<MyEvents />} />
+          <Route path='/booking' element={<Booking />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      </Router>
 
     </div>
   );

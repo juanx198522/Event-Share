@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
+
 import Logo from '../assets/Eventlogo.png'
 
 const Navbar = () => {
@@ -19,22 +20,22 @@ const Navbar = () => {
         <div>
         <ul className=' flex justify-items-end'>
           <li>
-            <Link to='' smooth={true} duration={500}>
+            <Link to="/events" smooth={true} duration={500}>
               Events
             </Link>
           </li>
           <li>
-            <Link to='' smooth={true} duration={500}>
+            <Link to="/myevents" smooth={true} duration={500}>
               My Events
             </Link>
           </li>
           <li>
-            <Link to='' smooth={true} duration={500}>
+            <Link to="/booking" smooth={true} duration={500}>
               Booking
             </Link>
           </li>
           <li>
-            <Link to='' smooth={true} duration={500}>
+            <Link to="/login" smooth={true} duration={500}>
               Signup/Login
             </Link>
           </li>
