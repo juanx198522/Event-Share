@@ -6,13 +6,13 @@ const typeDefs = gql`
     password: String!
     name: String!
     email: String!
-    phone: Int!
+    phone: String!
   }
 
   type MyEvent {
     title: String!
     description: String!
-    date: Date!
+    date: String!
     price: Int!
     stock: Int!
     image: String!
@@ -22,7 +22,7 @@ const typeDefs = gql`
   type PublicEvent {
     title: String!
     description: String!
-    date: Date!
+    date: String!
     price: Int!
     stock: Int!
     image: String!
@@ -41,19 +41,19 @@ const typeDefs = gql`
       password: String!,
       name: String!,
       email: String!,
-      phone: Int!
-    )
-    createEvent(
+      phone: String!
+    ): User
+    createMyEvents(
       title: String!,
       description: String!,
-      date: Date!,
+      date: String!,
       price: Int!,
       stock: Int!,
-      image: String!,
-    )
+      image: String!
+    ): MyEvent
     createEventBooking(
       eventId: ID!
-    )
+    ): PublicEvent
   }
 `;
 
