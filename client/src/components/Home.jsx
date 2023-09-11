@@ -4,14 +4,14 @@ const Home = () => {
   return (
     <div
       name="home"
-      className="bg-[#2f3235] text-gray-300 w-full md:h-screen"
+      className="bg-[#2f3235] text-gray-300 w-full h-full lg:min-h-screen bottom-0"
     >
       <div className="w-full p-4 flex flex-col justify-center h-screen bg-blue-500 ">
         <div>
-        <h1 className="text-4xl font-bold text-white mb-4">Welcome to Event Share!</h1>
+        <h1 className="text-4xl font-bold text-white mb-4 sm:hidden">Welcome to Event Share!</h1>
         </div>
         
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 grid-shr ">
           <div className=" bg-gray-500 group container rounded-md flex justify-center items-center mx-auto">
             
             <div className="p-4">

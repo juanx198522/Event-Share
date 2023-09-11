@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Login from './components/Login'
 import Events from './components/Events'
+import Create from './components/Create'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Home/>
       <Events/>
       <Login/>
+      <Create/>
 
     </div>
   );
