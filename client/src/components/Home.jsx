@@ -2,17 +2,17 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div name='home' className='bg-[#2f3235] text-gray-300 w-full h-full '>
-      <div className='w-full p-2 grid align-middle h-screen hidden md:flex'>
+    <div name='home' className='bg-[#2f3235] text-gray-300 w-full h-screen font-bold '>
+      <div className='w-full p-2 grid align-middle h-full hidden md:flex'>
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-[8%]'>
           <div>
-            <h1 className='text-4xl font-bold text-white'>
+            <h1 className='text-4xl  text-white'>
               Welcome to Event Share!
             </h1>
           </div>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Create Your Event
               </p>
               <div className='pt-8 '>
@@ -27,7 +27,7 @@ const Home = () => {
           </div>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Discover Amazing Events
               </p>
               <div className='pt-8 '>
@@ -43,7 +43,7 @@ const Home = () => {
           </div>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Buy Tickets with Ease
               </p>
               <div className='pt-8 '>
@@ -59,7 +59,7 @@ const Home = () => {
 
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Connect with the Community
               </p>
               <div className='pt-8 '>
@@ -74,7 +74,7 @@ const Home = () => {
           </div>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Why Choose Us?
               </p>
               <div className='pt-8 '>
@@ -91,11 +91,11 @@ const Home = () => {
       </div>
 
       {/* slider */}
-      <div className='carousel w-full h-screen md:hidden pt-32  '>
+      <div className='carousel w-full h-screen md:hidden pt-32 '>
         <div id='item1' className='carousel-item w-full'>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Create Your Event
               </p>
               <div className='pt-8 '>
@@ -112,7 +112,7 @@ const Home = () => {
         <div id='item2' className='carousel-item w-full'>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Discover Amazing Events
               </p>
               <div className='pt-8 '>
@@ -130,7 +130,7 @@ const Home = () => {
         <div id='item3' className='carousel-item w-full'>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Buy Tickets with Ease
               </p>
               <div className='pt-8 '>
@@ -147,7 +147,7 @@ const Home = () => {
         <div id='item4' className='carousel-item w-full'>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Connect with the Community
               </p>
               <div className='pt-8 '>
@@ -164,7 +164,7 @@ const Home = () => {
         <div id='item5' className='carousel-item w-full'>
           <div className=' bg-gray-500 group container rounded-md flex justify-center items-center mx-auto'>
             <div className='p-4'>
-              <p className='text-2xl font-bold text-white tracking-wider'>
+              <p className='text-2xl  text-white tracking-wider'>
                 Why Choose Us?
               </p>
               <div className='pt-8 '>

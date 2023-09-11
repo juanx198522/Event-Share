@@ -33,13 +33,13 @@ const Cart = () => {
             </div>
           </div>
           <div className='  bg-gray-500 rounded-md my-4'>
-            <div className=' border-b-2 border-b-white grid grid-cols-4 p-4'>
+            <div className=' border-b-4 border-b-white grid grid-cols-4 p-4'>
               <p className='font-bold text-white '>Order History</p>
             </div>
             <div>
             <div className=' grid p-4'>
               <ul>
-                <li className='border-b-4 col-start-1 col-end-4 font-bold text-white tracking-wider'>
+                <li className='border-b-2 col-start-1 col-end-4 font-bold text-white tracking-wider'>
                   <p>Title:</p>
                   <p>Description:</p>
                   <p>Date:</p>
