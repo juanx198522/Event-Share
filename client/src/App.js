@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { ApolloClient, ApolloProvider, InMemoryCache, } from '@apollo/client';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar'
@@ -9,21 +9,27 @@ import Events from './pages/Events'
 import MyEvents from './pages/MyEvents'
 import Booking from './pages/Booking'
 
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <div>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/events' element={<Events />} />
-          <Route path='/myevents' element={<MyEvents />} />
-          <Route path='/booking' element={<Booking />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </Router>
-
-    </div>
+    <ApolloProvider client={client}>
+      <div>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/events' element={<Events />} />
+            <Route path='/myevents' element={<MyEvents />} />
+            <Route path='/booking' element={<Booking />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </Router>
+      </div>
+    </ApolloProvider>
   );
 }
 

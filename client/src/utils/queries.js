@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
+// # create a GraphQL query to be executed by Apollo Client
 export const QUERY_PUBLICEVENT = gql`
-  # create a GraphQL query to be executed by Apollo Client
   query getPublicEvent {
     PublicEvent {
       title
