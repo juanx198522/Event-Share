@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_EVENT } from '../utils/mutations';
-
 const MyEvents = () => {
   const [formState, setFormState] = useState({
     title: '',
@@ -11,36 +10,29 @@ const MyEvents = () => {
     stock: '',
     image: '',
   });
-
   const [addEvent, { error }] = useMutation(ADD_EVENT);
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       const { data } = addEvent({
         variables: { ...formState },
       });
-
       window.location.reload();
     } catch (err) {
       console.error(err);
     }
   };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({ ...formState, [name]: value });
   };
-
   return (
     <div
       name='contact'
-      className='w-full h-screen bg-[#2f3235] flex justify-center items-center p-4 pt-4'
+      className='w-full h-screen bg-[#2F3235] flex justify-center items-center p-4 pt-4'
     >
       <form
         onSubmit={handleFormSubmit}
-
         className='flex flex-col max-w-[600px] w-full'
       >
         <div className='pb-8'>
@@ -49,7 +41,7 @@ const MyEvents = () => {
           </p>
         </div>
         <input
-          className='bg-[#ccd6f6]'
+          className='bg-[#CCD6F6]'
           type='text'
           placeholder='Title'
           name='title'
@@ -57,7 +49,7 @@ const MyEvents = () => {
           onChange={handleChange}
         />
         <input
-          className=' bg-[#ccd6f6] '
+          className=' bg-[#CCD6F6] '
           name='date'
           type='text'
           placeholder='--/--/--'
@@ -65,7 +57,7 @@ const MyEvents = () => {
           onChange={handleChange}
         ></input>
         <input
-          className=' bg-[#ccd6f6] '
+          className=' bg-[#CCD6F6] '
           name='price'
           type='text'
           placeholder='$____'
@@ -73,16 +65,15 @@ const MyEvents = () => {
           onChange={handleChange}
         ></input>
         <input
-          className=' bg-[#ccd6f6] '
+          className=' bg-[#CCD6F6] '
           name='stock'
           type='text'
           placeholder='Number of tickets available'
           value={formState.stock}
           onChange={handleChange}
         ></input>
-
         <textarea
-          className='my-2 p-2 rounded bg-[#ccd6f6]'
+          className='my-2 p-2 rounded bg-[#CCD6F6]'
           rows='7'
           placeholder='Description'
           name='message'
@@ -96,5 +87,4 @@ const MyEvents = () => {
     </div>
   );
 };
-
 export default MyEvents;
