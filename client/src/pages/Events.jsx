@@ -4,8 +4,12 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PUBLICEVENT } from '../utils/queries';
 
   const Events = () => {
-    const {loading, data } = useQuery(QUERY_PUBLICEVENT)
-    console.log("query", data)
+    const { loading, data } = useQuery(QUERY_PUBLICEVENT)
+
+    console.log(loading)
+    const eventData = data?.publicEvents || []
+    console.log("query", eventData)
+
     // console.log(publicEvents)
     // if (!publicEvents.length) {
     //   return <h3>No Events available</h3>;
@@ -40,14 +44,14 @@ import { QUERY_PUBLICEVENT } from '../utils/queries';
                 <li className='col-start-1 col-end-1 tracking-wider'>
 
                 {/* List all public events */}
-                {/* {publicEvents && publicEvents.map((PublicEvent) => (
+                {eventData.map((PublicEvent) => (
                   <>
                       <p>{PublicEvent.title}</p>
                       <p>{PublicEvent.description}</p>
                       <p>{PublicEvent.date}</p>
                       <p>{PublicEvent.price}</p>
                   </>
-                ))} */}
+                ))} 
 
                 </li>
               </ul>
