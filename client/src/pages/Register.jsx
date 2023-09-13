@@ -10,7 +10,7 @@ const Register = () => {
             <img
               src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               className="w-full"
-              alt="Sample image"
+              alt="SampleImage"
             />
           </div>
 
