@@ -11,7 +11,7 @@ const Navbar = () => {
           <li>
             <Link to='' duration={500}>
               <div className=''>
-              <img className='w-50 h-20 items-center flex-shrink-0' src={Logo} alt='EventLogo'/>
+              <img className='w-50 h-20 items-center shrink-0 ' src={Logo} alt='EventLogo'/>
               </div>
             </Link>
           </li>

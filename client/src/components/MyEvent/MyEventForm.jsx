@@ -61,6 +61,7 @@ const MyEventForm = () => {
           onChange={handleChange}
         />
         <input
+
           className='bg-[#CCD6F6]'
           type='file'
           name='image'
@@ -76,7 +77,9 @@ const MyEventForm = () => {
           onChange={handleChange}
         />
         <input
+
           className=' bg-[#CCD6F6] '
+
           name='date'
           type='text'
           placeholder='--/--/--'

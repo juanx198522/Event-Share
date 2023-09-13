@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements-react/dist/js/**/*.js"
+],
   theme: {
     extend: {},
   },
-  plugins:[require("daisyui")],
+  darkMode: "class",
+plugins: [require("tw-elements-react/dist/plugin.cjs")],
 }
 

@@ -1,7 +1,15 @@
 [
     {
         "title": "Pool party at sunset",
-        "description": "Pool party at sunset",
+        "description": "Enjoy an hour dinner party by the pool",
+        "date": "09/02/2024",
+        "price": "50",
+        "stock": "100",
+        "image": "Pool"
+    },
+    {
+        "title": "Pool party at sunrise",
+        "description": "Enjoy an hour breakfast party by the pool",
         "date": "09/02/2024",
         "price": "50",
         "stock": "100",

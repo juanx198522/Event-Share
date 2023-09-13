@@ -14,8 +14,8 @@ export const QUERY_MYEVENT = gql`
 `;
 
 export const QUERY_PUBLICEVENT = gql`
-  query getPublicEvent {
-    PublicEvent {
+{
+    publicEvents { 
       title
       description
       date
@@ -25,3 +25,12 @@ export const QUERY_PUBLICEVENT = gql`
     }
   }
 `;
+
+export const QUERY_USERS = gql`
+{
+  user {
+    username
+    name
+  }
+}
+`

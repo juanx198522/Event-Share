@@ -4,17 +4,21 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PUBLICEVENT } from '../utils/queries';
 
   const Events = () => {
-    const {loading, data } = useQuery(QUERY_PUBLICEVENT)
-    console.log("query", data)
+    const { loading, data } = useQuery(QUERY_PUBLICEVENT)
+
+    console.log(loading)
+    const eventData = data?.publicEvents || []
+    console.log("query", eventData)
+
     // console.log(publicEvents)
     // if (!publicEvents.length) {
     //   return <h3>No Events available</h3>;
     // }
     
   return (
-    <div className='bg-[#2f3235] text-white font-bold items-center w-screen p-4 h-screen'>
-      <div className='grid grid-cols-6 gap-4'>
-        <div className='col-start-2 col-span-4 p-4'>
+    <div className='bg-[#2f3235] text-white font-bold items-center w-screen p-4 h-screen '>
+      <div className='grid grid-cols-6 gap-4 pt-32'>
+        <div className='col-start-2 col-span-4 p-4 '>
           <div className='flex justify-center bg-gray-500 rounded-md items-center'>
             <div className=' justify-center text-center p-4'>
               <p className='text-2xl tracking-wider'>
@@ -40,14 +44,14 @@ import { QUERY_PUBLICEVENT } from '../utils/queries';
                 <li className='col-start-1 col-end-1 tracking-wider'>
 
                 {/* List all public events */}
-                {/* {publicEvents && publicEvents.map((PublicEvent) => (
+                {eventData.map((PublicEvent) => (
                   <>
                       <p>{PublicEvent.title}</p>
                       <p>{PublicEvent.description}</p>
                       <p>{PublicEvent.date}</p>
                       <p>{PublicEvent.price}</p>
                   </>
-                ))} */}
+                ))} 
 
                 </li>
               </ul>
