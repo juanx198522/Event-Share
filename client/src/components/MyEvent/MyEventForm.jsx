@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_EVENT } from '../utils/mutations';
-const MyEvents = () => {
+
+import { CREATE_MYEVENT } from '../../utils/mutations';
+
+const MyEventForm = () => {
   const [formState, setFormState] = useState({
     title: '',
     description: '',
@@ -10,10 +12,17 @@ const MyEvents = () => {
     stock: '',
     image: '',
   });
-  const [addEvent, { error }] = useMutation(ADD_EVENT);
+
+  useEffect(() => {
+    console.log(formState)
+  }, [formState])
+
+  const [addEvent, { error }] = useMutation(CREATE_MYEVENT);
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log('test')
       const { data } = addEvent({
         variables: { ...formState },
       });
@@ -22,10 +31,13 @@ const MyEvents = () => {
       console.error(err);
     }
   };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormState({ ...formState, [name]: value });
+    const newState = {...formState, [name]: value}
+    setFormState(newState);
   };
+
   return (
     <div
       name='contact'
@@ -49,13 +61,28 @@ const MyEvents = () => {
           onChange={handleChange}
         />
         <input
+          className='bg-[#CCD6F6]'
+          type='file'
+          name='image'
+          value={formState.image}
+          onChange={handleChange}
+        />
+        <textarea
+          className='my-2 p-2 rounded bg-[#CCD6F6]'
+          rows='7'
+          placeholder='Description'
+          name='description'
+          value={formState.description}
+          onChange={handleChange}
+        />
+        <input
           className=' bg-[#CCD6F6] '
           name='date'
           type='text'
           placeholder='--/--/--'
           value={formState.date}
           onChange={handleChange}
-        ></input>
+        />
         <input
           className=' bg-[#CCD6F6] '
           name='price'
@@ -63,7 +90,7 @@ const MyEvents = () => {
           placeholder='$____'
           value={formState.price}
           onChange={handleChange}
-        ></input>
+        />
         <input
           className=' bg-[#CCD6F6] '
           name='stock'
@@ -72,14 +99,6 @@ const MyEvents = () => {
           value={formState.stock}
           onChange={handleChange}
         ></input>
-        <textarea
-          className='my-2 p-2 rounded bg-[#CCD6F6]'
-          rows='7'
-          placeholder='Description'
-          name='message'
-          value={formState.description}
-          onChange={handleChange}
-        />
         <button className='bg-gray-300 text-blue-500 border-2 hover:bg-blue-500 hover:text-gray-300 px-8 py-3 my-8 mx-auto flex items-center font-bold'>
           Submit
         </button>
@@ -87,4 +106,4 @@ const MyEvents = () => {
     </div>
   );
 };
-export default MyEvents;
+export default MyEventForm;

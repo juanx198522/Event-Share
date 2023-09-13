@@ -6,11 +6,11 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Events from './pages/Events'
-import MyEvents from './pages/MyEvents'
+import MyEvent from './pages/MyEvent'
 import Booking from './pages/Booking'
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache(),
 });
 
@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/events' element={<Events />} />
-            <Route path='/myevents' element={<MyEvents />} />
+            <Route path='/myevent' element={<MyEvent />} />
             <Route path='/booking' element={<Booking />} />
             <Route path='/login' element={<Login />} />
           </Routes>
