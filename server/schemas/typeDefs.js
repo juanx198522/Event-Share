@@ -30,7 +30,7 @@ const typeDefs = gql`
 
   type Query {
     user: [User]
-    myEvents: [MyEvent]
+    myEvent: [MyEvent]
     publicEvents: [PublicEvent] 
     
   }
@@ -44,7 +44,7 @@ const typeDefs = gql`
       phone: String!
     ): User
 
-    createMyEvents(
+    createMyEvent(
       title: String!,
       description: String!,
       date: String!,
@@ -52,7 +52,21 @@ const typeDefs = gql`
       stock: Int!,
       image: String!
     ): MyEvent
-    
+
+    updateMyEvent(
+      id: ID!,
+      title: String!,
+      description: String!,
+      date: String!,
+      price: Int!,
+      stock: Int!,
+      image: String!
+    ): MyEvent
+
+    deleteMyEvent(
+      id: ID!
+    ): MyEvent
+
     createEventBooking(
       eventId: ID!
     ): PublicEvent
