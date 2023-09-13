@@ -43,6 +43,7 @@ const typeDefs = gql`
       email: String!,
       phone: String!
     ): User
+
     createMyEvents(
       title: String!,
       description: String!,
@@ -51,9 +52,11 @@ const typeDefs = gql`
       stock: Int!,
       image: String!
     ): MyEvent
+    
     createEventBooking(
       eventId: ID!
     ): PublicEvent
+
   }
 `;
 

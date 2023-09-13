@@ -1,6 +1,16 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_PUBLICEVENT } from '../utils/queries';
 
-const Events = () => {
+  const Events = () => {
+    const {loading, data } = useQuery(QUERY_PUBLICEVENT)
+    console.log("query", data)
+    // console.log(publicEvents)
+    // if (!publicEvents.length) {
+    //   return <h3>No Events available</h3>;
+    // }
+    
   return (
     <div className='bg-[#2f3235] text-white font-bold items-center w-screen p-4 h-screen '>
       <div className='grid grid-cols-6 gap-4 pt-32'>
@@ -28,10 +38,17 @@ const Events = () => {
             <div className=' grid grid-cols-4 p-4'>
               <ul>
                 <li className='col-start-1 col-end-1 tracking-wider'>
-                  <p>Title:</p>
-                  <p>Description:</p>
-                  <p>Date:</p>
-                  <p>Price:</p>
+
+                {/* List all public events */}
+                {/* {publicEvents && publicEvents.map((PublicEvent) => (
+                  <>
+                      <p>{PublicEvent.title}</p>
+                      <p>{PublicEvent.description}</p>
+                      <p>{PublicEvent.date}</p>
+                      <p>{PublicEvent.price}</p>
+                  </>
+                ))} */}
+
                 </li>
               </ul>
               <button className='col-start-4 col-end-4'>Add To Cart</button>

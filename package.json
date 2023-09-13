@@ -17,7 +17,8 @@
         "concurrently": "^5.3.0"
     },
     "dependencies": {
-        "nodemon": "^3.0.1",
-        "tw-elements-react": "^1.0.0-alpha1"
+        "@apollo/client": "^3.8.3",
+        "jsonwebtoken": "^9.0.2",
+        "react-router-dom": "^6.15.0"
     }
 }

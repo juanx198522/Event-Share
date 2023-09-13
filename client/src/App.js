@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
@@ -8,24 +8,28 @@ import Login from './pages/Login'
 import Events from './pages/Events'
 import MyEvents from './pages/MyEvents'
 import Booking from './pages/Booking'
-import Register from './pages/Register';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/' exact element={<Home />} />
-          <Route path='/events' element={<Events />} />
-          <Route path='/myevents' element={<MyEvents />} />
-          <Route path='/booking' element={<Booking />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
-      </Router>
-
-    </div>
+    <ApolloProvider client={client}>
+      <div>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/events' element={<Events />} />
+            <Route path='/myevents' element={<MyEvents />} />
+            <Route path='/booking' element={<Booking />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </Router>
+      </div>
+    </ApolloProvider>
   );
 }
 
