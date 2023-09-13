@@ -29,19 +29,33 @@ const MyEvents = () => {
   return (
     <div
       name='contact'
+<<<<<<< HEAD
+      className='w-full h-auto bg-[#2f3235] flex justify-center items-center p-4 pt-32'
+    >
+      <form
+        method='POST'
+        action=''
+        className='flex flex-col max-w-[600px] w-full pt-32'
+=======
       className='w-full h-screen bg-[#2F3235] flex justify-center items-center p-4 pt-4'
     >
       <form
         onSubmit={handleFormSubmit}
         className='flex flex-col max-w-[600px] w-full'
+>>>>>>> 32e0fae37aeecc9b1c8218d3be5ccc8de2e7f66f
       >
         <div className='pb-8'>
           <p className='text-4xl font-bold inline border-b-4 border-blue-500 text-gray-300 py-3'>
             Create an Event
           </p>
         </div>
+<<<<<<< HEAD
+        <input 
+          className='my-2 p-2 bg-[#ccd6f6] '
+=======
         <input
           className='bg-[#CCD6F6]'
+>>>>>>> 32e0fae37aeecc9b1c8218d3be5ccc8de2e7f66f
           type='text'
           placeholder='Title'
           name='title'
@@ -49,7 +63,11 @@ const MyEvents = () => {
           onChange={handleChange}
         />
         <input
+<<<<<<< HEAD
+          className='my-2 p-2 bg-[#ccd6f6] '
+=======
           className=' bg-[#CCD6F6] '
+>>>>>>> 32e0fae37aeecc9b1c8218d3be5ccc8de2e7f66f
           name='date'
           type='text'
           placeholder='--/--/--'
@@ -57,7 +75,11 @@ const MyEvents = () => {
           onChange={handleChange}
         ></input>
         <input
+<<<<<<< HEAD
+          className='my-2 p-2 bg-[#ccd6f6] '
+=======
           className=' bg-[#CCD6F6] '
+>>>>>>> 32e0fae37aeecc9b1c8218d3be5ccc8de2e7f66f
           name='price'
           type='text'
           placeholder='$____'
@@ -65,7 +87,11 @@ const MyEvents = () => {
           onChange={handleChange}
         ></input>
         <input
+<<<<<<< HEAD
+          className='my-2 p-2 bg-[#ccd6f6] '
+=======
           className=' bg-[#CCD6F6] '
+>>>>>>> 32e0fae37aeecc9b1c8218d3be5ccc8de2e7f66f
           name='stock'
           type='text'
           placeholder='Number of tickets available'

@@ -23,6 +23,7 @@
     button{
       @apply rounded;
     }
+   
    }
    .content-div{
      background-repeat: no-repeat;
