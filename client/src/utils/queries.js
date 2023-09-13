@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 
 // # create a GraphQL query to be executed by Apollo Client
 export const QUERY_PUBLICEVENT = gql`
-  query getPublicEvent {
-    PublicEvent {
+{
+    publicEvents { 
       title
       description
       date
@@ -13,3 +13,12 @@ export const QUERY_PUBLICEVENT = gql`
     }
   }
 `;
+
+export const QUERY_USERS = gql`
+{
+  user {
+    username
+    name
+  }
+}
+`
