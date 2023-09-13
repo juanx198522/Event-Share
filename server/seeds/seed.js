@@ -14,6 +14,7 @@ db.once('open', async () => {
 
     const events = await Event.insertMany(eventData);
     console.log('Events seeded successfully');
+    
   } catch (error) {
     console.error('Seed script error:', error);
   } finally {
