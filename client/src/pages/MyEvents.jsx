@@ -4,38 +4,38 @@ const MyEvents = () => {
   return (
     <div
       name='contact'
-      className='w-full h-screen bg-[#2f3235] flex justify-center items-center p-4 pt-4'
+      className='w-full h-auto bg-[#2f3235] flex justify-center items-center p-4 pt-32'
     >
       <form
         method='POST'
         action=''
-        className='flex flex-col max-w-[600px] w-full'
+        className='flex flex-col max-w-[600px] w-full pt-32'
       >
         <div className='pb-8'>
           <p className='text-4xl font-bold inline border-b-4 border-blue-500 text-gray-300 py-3'>
             Create an Event
           </p>
         </div>
-        <input
-          className='bg-[#ccd6f6]'
+        <input 
+          className='my-2 p-2 bg-[#ccd6f6] '
           type='text'
           placeholder='Title'
           name='title'
         />
         <input
-          className=' bg-[#ccd6f6] '
+          className='my-2 p-2 bg-[#ccd6f6] '
           name='date'
           type='text'
           placeholder='--/--/--'
         ></input>
         <input
-          className=' bg-[#ccd6f6] '
+          className='my-2 p-2 bg-[#ccd6f6] '
           name='price'
           type='text'
           placeholder='$____'
         ></input>
         <input
-          className=' bg-[#ccd6f6] '
+          className='my-2 p-2 bg-[#ccd6f6] '
           name='stock'
           type='text'
           placeholder='Number of tickets available'
