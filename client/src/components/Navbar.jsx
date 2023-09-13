@@ -9,7 +9,7 @@ const Navbar = () => {
       <div>
         <ul>
           <li>
-            <Link to='' smooth={true} duration={500}>
+            <Link to='' duration={500}>
               <div className=''>
               <img className='w-50 h-20 items-center shrink-0 ' src={Logo} alt='EventLogo'/>
               </div>
@@ -20,22 +20,22 @@ const Navbar = () => {
         <div>
         <ul className=' flex justify-items-end'>
           <li>
-            <Link to="/events" smooth={true} duration={500}>
+            <Link to="/events" duration={500}>
               Events
             </Link>
           </li>
           <li>
-            <Link to="/myevents" smooth={true} duration={500}>
+            <Link to="/myevent" duration={500}>
               My Events
             </Link>
           </li>
           <li>
-            <Link to="/booking" smooth={true} duration={500}>
+            <Link to="/booking" duration={500}>
               Booking
             </Link>
           </li>
           <li>
-            <Link to="/login" smooth={true} duration={500}>
+            <Link to="/login" duration={500}>
               Signup/Login
             </Link>
           </li>

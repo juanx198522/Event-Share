@@ -7,7 +7,7 @@ const resolvers = {
     user: async () => {
       return User.find({});
     },
-    myEvents: async (parent, { _id }) => {
+    myEvent: async (parent, { _id }) => {
       return Event.find( {eventOwner: _id}).populate('bookings');
     },
     publicEvents: async () => {
@@ -22,10 +22,40 @@ const resolvers = {
       return { token, user} ;
     },
 
-    createMyEvents: async (parent, args) => {
-      const myEvents = await Event.create(args);
-      return myEvents;
+    createMyEvent: async (parent, args) => {
+      const myEvent = await Event.create(args);
+      return myEvent;
     },
+
+    updateMyEvent: async (parent, { id, title, description, date, price, stock, image }) => {
+      try {
+        const updatedEvent = await Event.findByIdAndUpdate(
+          id,
+          {
+            title,
+            description,
+            date,
+            price,
+            stock,
+            image,
+          },
+          { new: true }
+        );
+        return updatedEvent;
+      } catch (error) {
+        throw new Error('Error updating event');
+      }
+    },
+
+    deleteMyEvent: async (parent, { id }) => {
+      try {
+        const deletedEvent = await Event.findByIdAndDelete(id);
+        return deletedEvent;
+      } catch (error) {
+        throw new Error('Error deleting event');
+      }
+    },
+
     createEventBooking: async (parent, args, context) => {
       const booking = await Event.findByIdAndUpdate(
         args.eventId,
