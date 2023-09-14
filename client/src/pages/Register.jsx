@@ -54,7 +54,7 @@ const Register = () => {
           {data ? (
               <p>
                 Success! You may now head{' '}
-                <Route to="/">back to the homepage.</Route>
+                <Route to="/home">back to the homepage.</Route>
               </p>
             ) : (
             <form onSubmit={handleFormSubmit}>
@@ -64,7 +64,7 @@ const Register = () => {
                 label="User Name"
                 size="lg"
                 className="mb-6"
-                value={formState.name}
+                defaultValue={formState.name}
                   onChange={handleChange}
               ></TEInput>
 
