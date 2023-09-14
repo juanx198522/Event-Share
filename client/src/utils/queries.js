@@ -7,8 +7,6 @@ export const QUERY_MYEVENT = gql`
       description
       date
       price
-      stock
-      image
     }
   }
 `;
@@ -20,8 +18,6 @@ export const QUERY_PUBLICEVENT = gql`
       description
       date
       price
-      stock
-      image
     }
   }
 `;

@@ -1,68 +1,47 @@
-import React, { useState} from 'react';
-// import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_PUBLICEVENT } from '../utils/queries';
 import { formatDate } from '../utils/formatDate';
 
-  const Events = () => {
-    const { loading, data } = useQuery(QUERY_PUBLICEVENT)
+const Events = () => {
+  const { loading, data } = useQuery(QUERY_PUBLICEVENT);
+  const eventData = data?.publicEvents || [];
 
-    console.log(loading)
-    const eventData = data?.publicEvents || []
-    console.log("query", eventData)
+  if (!eventData.length) {
+    return <h3>No Events available</h3>;
+  }
 
-    console.log(eventData)
-    if (!eventData.length) {
-      return <h3>No Events available</h3>;
-    }
-
-    
   return (
-    <div className='bg-[#2f3235] text-white font-bold items-center w-screen p-4 h-screen '>
-      <div className='grid grid-cols-6 gap-4 pt-32'>
-        <div className='col-start-2 col-span-4 p-4 '>
-          <div className='flex justify-center bg-gray-500 rounded-md items-center'>
-            <div className=' justify-center text-center p-4'>
-              <p className='text-2xl tracking-wider'>
-                List of Events
-              </p>
+    <div className="bg-gray-100 p-4">
+            <div className='grid gap-4 pt-32'>
+
+      <h3 className="text-xl font-semibold mb-4">List of events:</h3>
+      {eventData.map((PublicEvent) => (
+        <div key={PublicEvent.id} className="bg-white p-4 mb-4 rounded-lg shadow-md flex">
+          <div className="flex-1">
+            <div>
+              <p><span className="font-semibold">Title:</span> {PublicEvent.title}</p>
+              <p><span className="font-semibold">Description:</span> {PublicEvent.description}</p>
+              <p><span className="font-semibold">Date:</span> {formatDate(PublicEvent.date)}</p>
+              <p><span className="font-semibold">Price:</span> ${PublicEvent.price}</p>
             </div>
           </div>
-          <div className='flex flex-row justify-end my-4 space-x-2'>
-            <div className='bg-gray-500 rounded-md p-4 gap-4'>
-              <button className=' text-lg tracking-wider'>
-                Filter
+          <div className="flex-none">
+            <div className="mt-4 space-x-2">
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Add to cart
               </button>
             </div>
-            <div className='bg-gray-500 rounded-md p-4'>
-              <button className=' text-lg tracking-wider'>
-                Sort
-              </button>
-            </div>
           </div>
-          <div className=' bg-gray-500 rounded-md my-4'>
-            <div className=' grid grid-cols-4 p-4'>
-              <ul>
-                <li className='col-start-1 col-end-1 tracking-wider'>
 
-                {/* List all public events */}
-                {eventData.map((PublicEvent) => (
-                  <>
-                      <p>{PublicEvent.title}</p>
-                      <p>{PublicEvent.description}</p>
-                      <p>{formatDate(PublicEvent.date)}</p>
-                      <p>{PublicEvent.price}</p>
-                  </>
-                ))} 
-
-                </li>
-              </ul>
-              <button className='col-start-4 col-end-4'>Add To Cart</button>
-            </div>
-          </div>
         </div>
-      </div>
+
+      ))}
     </div>
+    </div>
+
   );
 };
 
