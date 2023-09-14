@@ -9,8 +9,6 @@ const MyEventForm = () => {
     description: '',
     date: '',
     price: '',
-    stock: '',
-    image: '',
   });
 
   useEffect(() => {
@@ -27,7 +25,7 @@ const MyEventForm = () => {
         variables: { ...formState, price: parseInt(formState.price), stock: parseInt(formState.stock) },
 
       });
-      // window.location.reload();
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
@@ -35,77 +33,66 @@ const MyEventForm = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    const newState = {...formState, [name]: value}
+    const newState = { ...formState, [name]: value }
     setFormState(newState);
   };
 
   return (
     <div
       name='contact'
-      className='w-full h-screen bg-[#2F3235] flex justify-center items-center p-4 pt-4'
+      className='w-full h-screen bg-gray-100 flex justify-center items-center p-4 pt-4'
     >
       <form
         onSubmit={handleFormSubmit}
         className='flex flex-col max-w-[600px] w-full'
       >
         <div className='pb-8'>
-          <p className='text-4xl font-bold inline border-b-4 border-blue-500 text-gray-300 py-3'>
+          <p className='text-4xl font-bold inline border-b-4 border-blue-500 text-black-300 py-3'>
             Create an Event
           </p>
         </div>
+        <p className='text-black font-bold text-left'>Title:</p>
         <input
           className='bg-[#CCD6F6]'
           type='text'
-          placeholder='Title'
+          placeholder='Pool party at sunset'
           name='title'
           value={formState.title}
           onChange={handleChange}
         />
-        <input
-
-          className='bg-[#CCD6F6]'
-          type='file'
-          name='image'
-          value={formState.image}
-          onChange={handleChange}
-        />
+        <p className='text-black font-bold text-left'>Description:</p>
         <textarea
           className='my-2 p-2 rounded bg-[#CCD6F6]'
           rows='7'
-          placeholder='Description'
+          placeholder='Enjoy an hour dinner party by the pool'
           name='description'
           value={formState.description}
           onChange={handleChange}
         />
+        <p className='text-black font-bold text-left'>Date:</p>
         <input
-
           className=' bg-[#CCD6F6] '
-
           name='date'
           type='text'
-          placeholder='--/--/--'
+          placeholder='1/1/2023'
           value={formState.date}
           onChange={handleChange}
         />
+        <p className='text-black font-bold text-left'>Price:</p>
         <input
           className=' bg-[#CCD6F6] '
           name='price'
           type='text'
-          placeholder='$____'
+          placeholder='100'
           value={formState.price}
           onChange={handleChange}
         />
-        <input
-          className=' bg-[#CCD6F6] '
-          name='stock'
-          type='text'
-          placeholder='Number of tickets available'
-          value={formState.stock}
-          onChange={handleChange}
-        ></input>
-        <button className='bg-gray-300 text-blue-500 border-2 hover:bg-blue-500 hover:text-gray-300 px-8 py-3 my-8 mx-auto flex items-center font-bold'>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+        >
           Submit
         </button>
+
       </form>
     </div>
   );

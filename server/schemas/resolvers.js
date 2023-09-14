@@ -27,7 +27,7 @@ const resolvers = {
       return myEvent;
     },
 
-    updateMyEvent: async (parent, { id, title, description, date, price, stock, image }) => {
+    updateMyEvent: async (parent, { id, title, description, date, price}) => {
       try {
         const updatedEvent = await Event.findByIdAndUpdate(
           id,
@@ -36,8 +36,6 @@ const resolvers = {
             description,
             date,
             price,
-            stock,
-            image,
           },
           { new: true }
         );
