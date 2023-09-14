@@ -5,13 +5,13 @@ import Logo from '../assets/eventlogo.png'
 
 const Navbar = () => {
   return (
-    <div className='fixed w-screen h-[12%] flex justify-between items-center p-8 bg-gray-500 text-white'>
+    <div className='fixed w-screen h-[12%] flex justify-between items-center p-8 bg-[#001e3b] text-white'>
       <div>
         <ul>
           <li>
             <Link to='' duration={500}>
               <div className=''>
-              <img className='w-50 h-20 items-center shrink-0 ' src={Logo} alt='EventLogo'/>
+              <img className='w-50 h-20 items-center object-cover h-10 w-60' src={Logo} alt='EventLogo'/>
               </div>
             </Link>
           </li>
@@ -42,6 +42,7 @@ const Navbar = () => {
         </ul>
       </div>
     </div>
+
   )
 }
 
