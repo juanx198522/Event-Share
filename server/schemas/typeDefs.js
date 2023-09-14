@@ -16,7 +16,7 @@ const typeDefs = gql`
     price: Int!
     stock: Int!
     image: String!
-    bookings:[User]
+    rsvps:[User]
   }
 
   type PublicEvent {
