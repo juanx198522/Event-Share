@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { TEInput, TERipple } from "tw-elements-react";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 
 import Auth from '../utils/authClient';
-import { Route } from 'react-router-dom';
+
 const Register = () => {
   const [formState, setFormState] = useState({
     username: '',
     email: '',
     password: '',
+    phone:'',
+    name:''
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -54,26 +57,18 @@ const Register = () => {
           {data ? (
               <p>
                 Success! You may now head{' '}
-                <Route to="/home">back to the homepage.</Route>
+                <Link to="/home">back to the homepage.</Link>
               </p>
             ) : (
             <form onSubmit={handleFormSubmit}>
-              {/* <!-- Email input --> */}
+              
+              {/* <!-- User Name input --> */}
               <TEInput
                 type="username"
                 label="User Name"
                 size="lg"
                 className="mb-6"
-                defaultValue={formState.name}
-                  onChange={handleChange}
-              ></TEInput>
-
-              <TEInput
-                type="email"
-                label="Email Address"
-                size="lg"
-                className="mb-6"
-                value={formState.email}
+                defaultValue={formState.username}
                 onChange={handleChange}
               ></TEInput>
 
@@ -83,7 +78,39 @@ const Register = () => {
                 label="Password"
                 className="mb-6"
                 size="lg"
-                value={formState.password}
+                defaultValue={formState.password}
+                  onChange={handleChange}
+              ></TEInput>
+
+              {/* <!-- Name input --> */}
+              <TEInput
+                type="name"
+                label="Name"
+                size="lg"
+                className="mb-6"
+                defaultValue={formState.name}
+                  onChange={handleChange}
+              ></TEInput>
+
+               {/* <!-- Email input --> */}
+              <TEInput
+                type="email"
+                label="Email Address"
+                size="lg"
+                className="mb-6"
+                defaultValue={formState.email}
+                onChange={handleChange}
+              ></TEInput>
+
+               
+
+              {/* <!-- Phone input --> */}
+              <TEInput
+                type="phone"
+                label="Phone Number"
+                size="lg"
+                className="mb-6"
+                defaultValue={formState.phone}
                   onChange={handleChange}
               ></TEInput>
 

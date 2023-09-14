@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { TEInput, TERipple } from "tw-elements-react";
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import { HashRouter as Route } from 'react-router-dom';
+import { Link, HashRouter as Route } from 'react-router-dom';
+import Register from './Register'
 
 import Auth from '../utils/authClient';
 
@@ -95,14 +96,14 @@ const Login = (props) => {
 
                 {/* <!-- Register link --> */}
                 <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
-                  Don't have an account?{" "}
-                  <a
-                    type="submit"
-                    href='/register'
+                  Don't have an account?{""}
+                  <Link
+                    
+                    to='/register'
                     className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
                   >
                     Register
-                  </a>
+                  </Link>
                 </p>
               </div>
             </form>
