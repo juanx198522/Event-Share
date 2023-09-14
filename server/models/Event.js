@@ -29,14 +29,13 @@ const eventSchema = new Schema({
   eventOwner: {
     type: Schema.Types.ObjectId,
     ref: "User",
-  }, 
-  bookings: [{
+  },
+  rsvps: [{
     type: Schema.Types.ObjectId,
     ref: "User",
-    unique: true,
   }],
 });
 
-const Event = model('Event', eventSchema);
+const Event = model('GeneralEvent', eventSchema);
 
 module.exports = Event;
