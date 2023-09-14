@@ -8,7 +8,7 @@ const resolvers = {
       return User.find({});
     },
     myEvent: async (parent, { _id }) => {
-      return Event.find( {eventOwner: _id}).populate('bookings');
+      return Event.find( {eventOwner: _id}).populate('rsvps');
     },
     publicEvents: async () => {
       return Event.find({});
@@ -23,7 +23,7 @@ const resolvers = {
     },
 
     createMyEvent: async (parent, args) => {
-      const myEvent = await Event.create(args);
+      const myEvent = await Event.create({...args, rsvps: []});
       return myEvent;
     },
 
@@ -59,7 +59,7 @@ const resolvers = {
     createEventBooking: async (parent, args, context) => {
       const booking = await Event.findByIdAndUpdate(
         args.eventId,
-        { $push: {bookings:context.user.id}}
+        { $push: {rsvps:context.user.id}}
 
       )
       return booking;

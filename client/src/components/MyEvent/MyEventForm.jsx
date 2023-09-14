@@ -24,9 +24,10 @@ const MyEventForm = () => {
     try {
       console.log('test')
       const { data } = addEvent({
-        variables: { ...formState },
+        variables: { ...formState, price: parseInt(formState.price), stock: parseInt(formState.stock) },
+
       });
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.error(err);
     }

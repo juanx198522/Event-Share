@@ -7,21 +7,28 @@ const EventList = ({ myEvent, title, onDelete, onUpdate }) => {
 
   return (
     <div>
-      <h3>{title}</h3>
+      <h3>List of events created</h3>
+      <br></br>
       {myEvent &&
         myEvent.map((event) => (
           <div key={event.id}>
             <div>
               {event.title}
+              <br></br>
               {event.image}
+              <br></br>
               {event.description}
+              <br></br>
               {event.date}
+              <br></br>
               {event.price}
-              {event.stock}
+              <br></br>
+              {event.stock}              
             </div>
             <div>
               <button onClick={() => onUpdate(event.id)}>Update</button>
               <button onClick={() => onDelete(event.id)}>Delete</button>
+              <br></br>
             </div>
           </div>
         ))}
