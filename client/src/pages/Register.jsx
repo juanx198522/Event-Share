@@ -64,41 +64,45 @@ const Register = () => {
               
               {/* <!-- User Name input --> */}
               <TEInput
-                type="username"
+                type="text"
+                name='username'
                 label="User Name"
                 size="lg"
                 className="mb-6"
-                defaultValue={formState.username}
+                value={formState.username}
                 onChange={handleChange}
               ></TEInput>
 
               {/* <!--Password input--> */}
               <TEInput
                 type="password"
+                name='password'
                 label="Password"
                 className="mb-6"
                 size="lg"
-                defaultValue={formState.password}
+                value={formState.password}
                   onChange={handleChange}
               ></TEInput>
 
               {/* <!-- Name input --> */}
               <TEInput
-                type="name"
+                type="text"
+                name='name'
                 label="Name"
                 size="lg"
                 className="mb-6"
-                defaultValue={formState.name}
+                value={formState.name}
                   onChange={handleChange}
               ></TEInput>
 
                {/* <!-- Email input --> */}
               <TEInput
                 type="email"
+                name='email'
                 label="Email Address"
                 size="lg"
                 className="mb-6"
-                defaultValue={formState.email}
+                value={formState.email}
                 onChange={handleChange}
               ></TEInput>
 
@@ -106,11 +110,12 @@ const Register = () => {
 
               {/* <!-- Phone input --> */}
               <TEInput
-                type="phone"
+                type="text"
+                name='phone'
                 label="Phone Number"
                 size="lg"
                 className="mb-6"
-                defaultValue={formState.phone}
+                value={formState.phone}
                   onChange={handleChange}
               ></TEInput>
 
@@ -118,7 +123,7 @@ const Register = () => {
               <div className="text-center lg:text-left">
                 <TERipple rippleColor="light">
                   <button
-                    type="button"
+                    type="submit"
                     className="inline-block rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                   >
                     Register

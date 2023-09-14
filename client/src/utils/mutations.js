@@ -1,4 +1,28 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
+
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_USER = gql`
+  mutation addUser($username: String!, $email: String!, $password: String!, $name: String!, $phone: String!) {
+    addUser(username: $username, email: $email, password: $password, name: $name, phone: $phone) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
 
 export const CREATE_MYEVENT = gql`
   mutation createMyEvent($title: String!, $description: String!, $date: String!, $price: Int!) {
@@ -29,29 +53,6 @@ export const DELETE_MYEVENT = gql`
       description
       date
       price
-    }
-  }
-`;
-
-export const ADD_USER = gql`
-  mutation addUser($username: String!,$email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user{
-        _id
-      }
-    }
-  }
-`;
-
-export const LOGIN_USER = gql`
-  mutation loginUser($email: String!, $password: String!) {
-    loginUser(email: $email, password: $password) {
-      token
-      profile{
-        _id
-        name
-      }
     }
   }
 `;

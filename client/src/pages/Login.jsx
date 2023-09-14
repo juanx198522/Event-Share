@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { TEInput, TERipple } from "tw-elements-react";
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import { Link, HashRouter as Route } from 'react-router-dom';
-import Register from './Register'
+import { Link } from 'react-router-dom';
+
 
 import Auth from '../utils/authClient';
 
@@ -59,7 +59,7 @@ const Login = (props) => {
           {data ? (
               <p>
                 Success! You may now head{' '}
-                <Route to="/">back to the homepage.</Route>
+                <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
             <form onSubmit={handleFormSubmit}>
