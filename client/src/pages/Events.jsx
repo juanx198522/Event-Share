@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState} from 'react';
 // import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_PUBLICEVENT } from '../utils/queries';
+import { formatDate } from '../utils/formatDate';
 
   const Events = () => {
     const { loading, data } = useQuery(QUERY_PUBLICEVENT)
@@ -10,10 +11,11 @@ import { QUERY_PUBLICEVENT } from '../utils/queries';
     const eventData = data?.publicEvents || []
     console.log("query", eventData)
 
-    // console.log(publicEvents)
-    // if (!publicEvents.length) {
-    //   return <h3>No Events available</h3>;
-    // }
+    console.log(eventData)
+    if (!eventData.length) {
+      return <h3>No Events available</h3>;
+    }
+
     
   return (
     <div className='bg-[#2f3235] text-white font-bold items-center w-screen p-4 h-screen '>
@@ -48,7 +50,7 @@ import { QUERY_PUBLICEVENT } from '../utils/queries';
                   <>
                       <p>{PublicEvent.title}</p>
                       <p>{PublicEvent.description}</p>
-                      <p>{PublicEvent.date}</p>
+                      <p>{formatDate(PublicEvent.date)}</p>
                       <p>{PublicEvent.price}</p>
                   </>
                 ))} 
