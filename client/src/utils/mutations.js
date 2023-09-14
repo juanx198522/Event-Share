@@ -25,57 +25,23 @@ export const ADD_USER = gql`
 `;
 
 export const CREATE_MYEVENT = gql`
-  mutation createMyEvent(
-    $title: String!
-    $description: String!
-    $date: String!
-    $price: Int!
-    $stock: Int!
-    $image: String!
-  ) {
-    createMyEvent(
-      title: $title
-      description: $description
-      date: $date
-      price: $price
-      stock: $stock
-      image: $image
-    ) {
+  mutation createMyEvent($title: String!, $description: String!, $date: String!, $price: Int!) {
+    createMyEvent(title: $title, description: $description, date: $date, price: $price) {
       title
       description
       date
       price
-      stock
-      image
     }
   }
 `;
 
 export const UPDATE_MYEVENT = gql`
-  mutation updateMyEvent(
-    $id: ID!
-    $title: String!
-    $description: String!
-    $date: String!
-    $price: Int!
-    $stock: Int!
-    $image: String!
-  ) {
-    updateMyEvent(
-      id: $id
-      title: $title
-      description: $description
-      date: $date
-      price: $price
-      stock: $stock
-      image: $image
-    ) {
+  mutation updateMyEvent($id: ID!, $title: String!, $description: String!, $date: String!, $price: Int!) {
+    updateMyEvent(id: $id, title: $title, description: $description, date: $date, price: $price) {
       title
       description
       date
       price
-      stock
-      image
     }
   }
 `;
@@ -87,8 +53,6 @@ export const DELETE_MYEVENT = gql`
       description
       date
       price
-      stock
-      image
     }
   }
 `;

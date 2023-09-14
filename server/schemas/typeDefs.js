@@ -11,12 +11,11 @@ const typeDefs = gql`
   }
 
   type MyEvent {
+    _id: ID
     title: String!
     description: String!
     date: String!
     price: Int!
-    stock: Int!
-    image: String!
     rsvps:[User]
   }
 
@@ -25,8 +24,6 @@ const typeDefs = gql`
     description: String!
     date: String!
     price: Int!
-    stock: Int!
-    image: String!
   }
 
   type Auth{
@@ -60,8 +57,6 @@ const typeDefs = gql`
       description: String!,
       date: String!,
       price: Int!,
-      stock: Int!,
-      image: String!
     ): MyEvent
 
     updateMyEvent(
@@ -70,8 +65,6 @@ const typeDefs = gql`
       description: String!,
       date: String!,
       price: Int!,
-      stock: Int!,
-      image: String!
     ): MyEvent
 
     deleteMyEvent(
