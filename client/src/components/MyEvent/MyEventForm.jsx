@@ -3,8 +3,7 @@ import { useMutation } from '@apollo/client';
 
 import { CREATE_MYEVENT } from '../../utils/mutations';
 
-import { Datepicker, Input, initTE } from "tw-elements";
-initTE({ Datepicker, Input });
+
 
 
 const MyEventForm = () => {

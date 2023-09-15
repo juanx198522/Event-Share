@@ -27,7 +27,7 @@ const Login = (props) => {
     console.log(formState);
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: { ...formState }, 
       });
 
       Auth.login(data.login.token);
@@ -98,7 +98,7 @@ const Login = (props) => {
 
                 {/* <!-- Register link --> */}
                 <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
-                  Don't have an account?{""}
+                  Don't have an account? {""}
                   <Link
                     
                     to='/register'
