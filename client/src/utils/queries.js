@@ -15,6 +15,7 @@ export const QUERY_MYEVENT = gql`
 export const QUERY_PUBLICEVENT = gql`
 {
     publicEvents { 
+      _id
       title
       description
       date
@@ -43,6 +44,22 @@ export const QUERY_ME = gql`
         thoughtAuthor
         createdAt
       }
+    }
+  }
+`;
+
+export const GET_USER_BOOKINGS = gql`
+  query {
+    userBookings {
+      _id
+      event {
+        title
+        description
+        date
+        price
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
