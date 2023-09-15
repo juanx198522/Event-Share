@@ -10,10 +10,14 @@ import { QUERY_MYEVENT } from '../utils/queries';
 
 const MyEvent = () => {
 
+
     const { loading, data } = useQuery(QUERY_MYEVENT);
+    
     const myEvent = data?.myEvent || [];
 
+
     if (!Auth.loggedIn()) {    
+
         return <Navigate replace={true} to='/register'/>
     }
 

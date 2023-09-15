@@ -9,6 +9,7 @@ const Navbar = () => {
   return (
 
 
+
 <div className='fixed w-screen h-[12%] flex justify-between items-center p-8 bg-[#001e3b] text-white'>
 <div>
 <ul>
@@ -52,6 +53,8 @@ md:border-0  ">
 </ul>
 </div>
 </div>
+
+    
 
     
 
