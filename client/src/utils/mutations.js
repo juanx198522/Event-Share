@@ -56,3 +56,14 @@ export const DELETE_MYEVENT = gql`
     }
   }
 `;
+
+export const CREATE_EVENT_BOOKING = gql`
+  mutation createEventBooking($eventId: ID!) {
+    createEventBooking(eventId: $eventId) {
+      title
+      description
+      date
+      price
+    }
+  }
+`;

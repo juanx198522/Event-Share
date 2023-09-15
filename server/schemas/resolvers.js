@@ -12,7 +12,14 @@ const resolvers = {
     },
     publicEvents: async () => {
       return Event.find({});
-    }
+    },
+    userBookings: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('You must be logged in to view your bookings');
+      }
+      const bookings = await Booking.find({ user: context.user._id }).populate('event');
+      return bookings;
+    },
   },
 
   Mutation: {
