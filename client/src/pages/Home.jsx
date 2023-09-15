@@ -6,19 +6,19 @@ import pic3 from '../assets/buy-ticket.png';
 import pic4 from '../assets/connect.jpg';
 import pic5 from '../assets/why-choose.jpg';
 
-import { Footer } from '../components/Footer'; 
+import Footer  from '../components/Footer'; 
 
 
 export default function Home() {
     return (
+      <>
       <div name='home' className='bg-[#ffffff] text-gray-300 w-full h-auto font-bold md:h-screen '>
-
         <div className='w-full p-2 grid align-middle'>
           
           <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-[8%]'>
             {/* title */}
             <div class="m-5">
-              <h1 class="text-8xl font-semibold  text-[#001e3b] tracking-tight">Welcome to Event Share!</h1>
+              <h1 class="text-8xl font-semibold  text-[#001e3b] tracking-tight md:text-base">Welcome to Event Share!</h1>
               <h2 class="text-4xl font-medium  text-black leading-tight my-10">One Goal. One Passion.<br />Event Booking Made Easy.</h2>
             </div>
 
@@ -112,13 +112,16 @@ export default function Home() {
                       </p>
                 </div>
             </div>
-
           </div>
         </div>
-        { Footer }
+     
       </div>
+      
+      </>
     );
   };
+
+
 
 
 

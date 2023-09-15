@@ -27,7 +27,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div>
-        <ul className=" flex justify-items-end">
+        <ul
+          className=" flex justify-items-end
+font-medium flex-col p-4 md:p-0 mt-4  md:flex-row md:space-x-8 md:mt-0 
+md:border-0 "
+        >
           <li>
             <Link to="/events" duration={500}>
               Events
@@ -49,7 +53,10 @@ const Navbar = () => {
                 <div className="">
                   {Auth.getProfile().data.username}'s profile
                 </div>
-                <button className="btn btn-lg btn-light m-2 hover:text-red-300" onClick={logout}>
+                <button
+                  className="btn btn-lg btn-light m-2 hover:text-red-300"
+                  onClick={logout}
+                >
                   Logout
                 </button>
               </>
@@ -64,7 +71,6 @@ const Navbar = () => {
               </>
             )}
 
-          
             {/* <Link to="/login" duration={500}>
               Signup/Login
             </Link> */}
