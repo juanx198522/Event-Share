@@ -4,22 +4,47 @@ const { User, Event } = require('../models');
 
 const resolvers = {
   Query: {
-    user: async () => {
-      return User.find({});
+    user: async (parent, { username }) => {
+      return User.find();
     },
     myEvent: async (parent, { _id }) => {
       return Event.find( {eventOwner: _id}).populate('rsvps');
     },
     publicEvents: async () => {
       return Event.find({});
-    }
+    },
+    userBookings: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('You must be logged in to view your bookings');
+      }
+      const bookings = await Booking.find({ user: context.user._id }).populate('event');
+      return bookings;
+    },
   },
 
   Mutation: {
-    createUser: async (parent, args) => {
-      const user = await User.create(args);
+    addUser: async (parent, { username, email, password, phone, name }) => {
+      const user = await User.create({ username, email, password, phone, name });
       const token = signToken(user);
       return { token, user} ;
+    },
+
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('No user found with this email address');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
     },
 
     createMyEvent: async (parent, args) => {
