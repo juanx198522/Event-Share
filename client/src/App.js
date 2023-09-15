@@ -10,7 +10,7 @@ import Events from './pages/Events'
 import MyEvent from './pages/MyEvent'
 import Booking from './pages/Booking'
 import Register from './pages/Register'
-import Profile from './pages/Profile'
+// import Profile from './pages/Profile'
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -53,7 +53,7 @@ function App() {
             <Route path='/booking' element={<Booking />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/profile' element={<Profile />} />
+            {/* <Route path='/profile' element={<Profile />} /> */}
           </Routes>
         </Router>
       </div>

@@ -65,7 +65,8 @@ const Login = (props) => {
             <form onSubmit={handleFormSubmit}>
               {/* <!-- Email input --> */}
               <TEInput
-                type="email"
+                type="text"
+                name="email"
                 label="Email address"
                 size="lg"
                 className="mb-6"
@@ -76,6 +77,7 @@ const Login = (props) => {
               {/* <!--Password input--> */}
               <TEInput
                 type="password"
+                name="password"
                 label="Password"
                 className="mb-6"
                 size="lg"

@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 import Logo from '../assets/eventlogo.png'
+import Auth from '../utils/authClient';
 
 const Navbar = () => {
+  
   return (
     <div className='fixed w-screen h-[12%] flex justify-between items-center p-8 bg-[#001e3b] text-white'>
       <div>
@@ -26,6 +28,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/myevent" duration={500}>
+              
               My Events
             </Link>
           </li>
