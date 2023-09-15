@@ -15,6 +15,7 @@ export const QUERY_MYEVENT = gql`
 export const QUERY_PUBLICEVENT = gql`
 {
     publicEvents { 
+      _id
       title
       description
       date

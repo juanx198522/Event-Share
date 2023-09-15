@@ -20,6 +20,7 @@ const typeDefs = gql`
   }
 
   type PublicEvent {
+    _id: ID
     title: String!
     description: String!
     date: String!
@@ -30,12 +31,19 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+  
+  type Booking {
+    _id: ID
+    event: PublicEvent
+    createdAt: String
+    updatedAt: String
+  }
 
   type Query {
     user: [User]
     myEvent: [MyEvent]
     publicEvents: [PublicEvent] 
-    
+    userBookings: [Booking]
   }
 
   type Mutation {
