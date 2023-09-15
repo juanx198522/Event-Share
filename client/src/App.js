@@ -10,6 +10,7 @@ import Events from './pages/Events'
 import MyEvent from './pages/MyEvent'
 import Booking from './pages/Booking'
 import Register from './pages/Register'
+import Footer from './components/Footer'
 // import Profile from './pages/Profile'
 
 // const client = new ApolloClient({
@@ -55,6 +56,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             {/* <Route path='/profile' element={<Profile />} /> */}
           </Routes>
+          <Footer/>
         </Router>
       </div>
     </ApolloProvider>
