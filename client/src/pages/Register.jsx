@@ -129,7 +129,16 @@ const Register = () => {
                     Register
                   </button>
                 </TERipple>
-
+                <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+                  Already have an account?{""}
+                  <Link
+                    
+                    to='/login'
+                    className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
+                  >
+                    Login
+                  </Link>
+                </p>
               
               </div>
             </form>

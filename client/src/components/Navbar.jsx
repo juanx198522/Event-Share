@@ -5,7 +5,10 @@ import Logo from '../assets/eventlogo.png'
 import Auth from '../utils/authClient';
 
 const Navbar = () => {
-  
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <div className='fixed w-screen h-[12%] flex justify-between items-center p-8 bg-[#001e3b] text-white'>
       <div>
@@ -38,6 +41,25 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+          {Auth.loggedIn() ? (
+            <>
+              <div className="btn btn-lg btn-info m-2">
+                {Auth.getProfile().data.username}'s profile
+              </div>
+              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="btn btn-lg btn-info m-2" to="/login">
+                Login
+              </Link>
+              <Link className="btn btn-lg btn-light m-2" to="/register">
+                Signup
+              </Link>
+            </>
+          )}
             <Link to="/login" duration={500}>
               Signup/Login
             </Link>
