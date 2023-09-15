@@ -32,3 +32,19 @@ export const QUERY_USERS = gql`
   }
 }
 `
+
+export const GET_USER_BOOKINGS = gql`
+  query {
+    userBookings {
+      _id
+      event {
+        title
+        description
+        date
+        price
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
