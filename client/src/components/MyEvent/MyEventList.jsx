@@ -28,16 +28,16 @@ const EventList = ({ myEvent, title, onUpdate }) => {
 
   return (
     <div className="bg-gray-100 p-4">
-      <h3 className="text-xl font-semibold mb-4">List of events created:</h3>
+      <h2 class="text-3xl font-semibold text-black leading-tight pb-5">List of events created:</h2>
       {myEvent &&
         myEvent.map((event) => (
           <div key={event._id} className="bg-white p-4 mb-4 rounded-lg shadow-md flex">
             <div className="flex-1">
-              <div>
-                <p><span className="font-semibold">Title:</span> {event.title}</p>
-                <p><span className="font-semibold">Description:</span> {event.description}</p>
-                <p><span className="font-semibold">Date:</span> {formatDate(event.date)}</p>
-                <p><span className="font-semibold">Price:</span> ${event.price}</p>
+              <div className="font-normal text-left">
+                <p className="text-left"><span className="font-semibold">Title:</span> {event.title}</p>
+                <p className="text-left"> <span className="font-semibold">Description:</span> {event.description}</p>
+                <p className="text-left"><span className="font-semibold">Date:</span> {formatDate(event.date)}</p>
+                <p className="text-left"><span className="font-semibold">Price:</span> ${event.price}</p>
               </div>
             </div>
 

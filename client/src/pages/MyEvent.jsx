@@ -15,27 +15,32 @@ const MyEvent = () => {
     
     const myEvent = data?.myEvent || [];
 
-    if (!Auth.loggedIn()) {
-        
+
+    if (!Auth.loggedIn()) {    
+
         return <Navigate replace={true} to='/register'/>
     }
 
 
     return (
-        <div>
+        <div name='home' className='w-full h-auto font-bold md:h-screen '>
+
+        <div className='w-full p-2 grid align-middle'>
+          
+          <div className='grid sm:grid-cols-2 md:grid-cols-2 gap-4 mt-[6%]'>
+
+            {/* left side*/}
             <div>
-                <MyEventForm />
+                    <MyEventForm />
             </div>
+
+            {/* right side */}
             <div>
-                {loading ? (
-                    <div>Loading...</div>
-                ) : (
-                    <MyEventList
-                        myEvent={myEvent}
-                    />
-                )}
+                {loading ? (<div>Loading...</div>) : (<MyEventList myEvent={myEvent} /> )}
             </div>
+          </div>
         </div>
+      </div>
     );
 }
 

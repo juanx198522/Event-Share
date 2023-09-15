@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const Footer = () => {
+export default function Footer () {
   return (
     <>
-    <footer
-      className="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+    <div
+      className="bg-neutral-100 bg-[#001e3b] text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden lg:block">
@@ -63,25 +63,25 @@ export const Footer = () => {
               </svg>
               Event Share
             </h6>
-            <p>
+            <p class="text-left">
               One Goal, One Passion...<br />Event Booking Made Easy. 
             </p>
           </div>
           {/* <!-- Products section --> */}
           <div className="">
             <h6
-              className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+              className="mb-4 flex justify-center font-semibold uppercase md:justify-start ">
               Services
             </h6>
-            <p className="mb-4">
+            <p className="mb-4 text-left">
               <a className="text-neutral-600 dark:text-neutral-200"
               >Event Posting</a>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 text-left" >
               <a className="text-neutral-600 dark:text-neutral-200"
               >Booking</a>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 text-left">
               <a className="text-neutral-600 dark:text-neutral-200"
               >Payment</a>
             </p>
@@ -93,11 +93,11 @@ export const Footer = () => {
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
               Useful links
             </h6>
-            <p className="mb-4">
+            <p className="mb-4 text-left">
               <a className="text-neutral-600 dark:text-neutral-200"
               >About Us</a>
             </p>
-            <p className="mb-4">
+            <p className="mb-4 text-left">
               <a className="text-neutral-600 dark:text-neutral-200"
               >Support</a>
             </p>
@@ -154,9 +154,9 @@ export const Footer = () => {
 
       {/* <!--Copyright section--> */}
       <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
-        <span>© 2023 Copyright: Event Share.</span>.
+        <span>© 2023 Copyright: Event Share.</span>
       </div>
-    </footer>
+    </div>
     </>
   );
 }
