@@ -28,7 +28,7 @@ const EventList = ({ myEvent, title, onUpdate }) => {
 
   return (
     <div className="bg-gray-100 p-4">
-      <h2 class="text-3xl font-semibold text-black leading-tight pb-5">List of events created:</h2>
+      <h2 className="text-3xl font-semibold text-black leading-tight pb-5">List of events created:</h2>
       {myEvent &&
         myEvent.map((event) => (
           <div key={event._id} className="bg-white p-4 mb-4 rounded-lg shadow-md flex">

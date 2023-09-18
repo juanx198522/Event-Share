@@ -50,14 +50,14 @@ const MyEventForm = () => {
         className='flex flex-col max-w-[600px] w-full pt-10'
     >
       <div className='pb-10'>
-          <h1 class="text-5xl font-semibold text-black leading-tight pb-5">All Events</h1>
+          <h1 className="text-5xl font-semibold text-black leading-tight pb-5">All Events</h1>
           <p className='text-3xl font-bold inline border-b-4 border-blue-500 text-black-300 py-3'>
             Create an Event
           </p>
         </div>
         {/* Title */}
-        <div class="mb-6">
-          <label for="email" class="block mb-2 font-semibold text-gray-900 dark:text-white">Event Title</label>
+        <div className="mb-6">
+          <label for="email" className="block mb-2 font-semibold text-gray-900 dark:text-white">Event Title</label>
           <input 
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
             type="text" 
@@ -68,8 +68,8 @@ const MyEventForm = () => {
             required />
         </div>
         {/* Description */}
-        <div class="mb-6">
-          <label for="email" class="block mb-2 font-semibold text-gray-900 dark:text-white">Description</label>
+        <div className="mb-6">
+          <label for="email" className="block mb-2 font-semibold text-gray-900 dark:text-white">Description</label>
           <textarea 
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
             type="text" 
@@ -81,8 +81,8 @@ const MyEventForm = () => {
             required />
         </div>
         {/* Date */}
-        <div class="mb-6">
-          <label for="email" class="block mb-2 font-semibold text-gray-900 dark:text-white">
+        <div className="mb-6">
+          <label for="email" className="block mb-2 font-semibold text-gray-900 dark:text-white">
             Date</label>
           <input 
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
@@ -93,8 +93,8 @@ const MyEventForm = () => {
             required />
         </div>
          {/* Price */}
-         <div class="mb-6">
-          <label for="email" class="block mb-2 font-semibold text-gray-900 dark:text-white">
+         <div className="mb-6">
+          <label for="email" className="block mb-2 font-semibold text-gray-900 dark:text-white">
             Price ($)</label>
           <input 
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
