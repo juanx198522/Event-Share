@@ -17,7 +17,7 @@ const Navbar = () => {
             <Link to="" duration={500}>
               <div className="">
                 <img
-                  className="w-50 h-20 items-center object-cover h-10 w-60"
+                  className="w-50 h-20 items-center object-cover w-60"
                   src={Logo}
                   alt="EventLogo"
                 />
@@ -63,18 +63,14 @@ md:border-0 "
             ) : (
               <>
                 <Link className="btn btn-lg btn-info m-2 " to="/login">
-                  Login
-                </Link>
-                <Link className="btn btn-lg btn-light m-2" to="/register">
-                  Signup
+                  Login/Register
                 </Link>
               </>
             )}
 
-            {/* <Link to="/login" duration={500}>
-              Signup/Login
-            </Link> */}
+           
           </li>
+         
         </ul>
       </div>
     </div>

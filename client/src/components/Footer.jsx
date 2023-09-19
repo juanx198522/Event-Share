@@ -3,8 +3,8 @@ import React from 'react'
 export default function Footer () {
   return (
     <>
-    <div
-      className=" bg-[#001e3b] text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left fixed w-screen">
+    <footer
+      className=" bg-[#001e3b] text-center text-white  dark:text-neutral-200 lg:text-left fixed w-screen pb-32">
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden lg:block">
@@ -12,7 +12,7 @@ export default function Footer () {
         </div>
         {/* <!-- Social network icons container --> */}
         <div className="flex justify-center">
-          <a className="mr-6 text-neutral-600 dark:text-neutral-200" href="https://www.linkedin.com/in/mayperalta" >
+          <a className="mr-6 text-white dark:text-neutral-200" href="https://www.linkedin.com/in/mayperalta" >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -23,7 +23,7 @@ export default function Footer () {
             </svg>
           </a>
           
-          <a className="mr-6 text-neutral-600 dark:text-neutral-200" href="https://www.facebook.com/may.peralta.5">
+          <a className="mr-6 text-white dark:text-neutral-200" href="https://www.facebook.com/may.peralta.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -33,7 +33,7 @@ export default function Footer () {
                 d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
             </svg>
           </a>
-          <a className="text-neutral-600 dark:text-neutral-200" href="https://github.com/mayperalta">
+          <a className="text-white dark:text-neutral-200" href="https://github.com/mayperalta">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
@@ -63,7 +63,7 @@ export default function Footer () {
               </svg>
               Event Share
             </h6>
-            <p class="text-left">
+            <p className="text-left">
               One Goal, One Passion...<br />Event Booking Made Easy. 
             </p>
           </div>
@@ -74,15 +74,15 @@ export default function Footer () {
               Services
             </h6>
             <p className="mb-4 text-left">
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white dark:text-neutral-200"
               >Event Posting</a>
             </p>
             <p className="mb-4 text-left" >
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white dark:text-neutral-200"
               >Booking</a>
             </p>
             <p className="mb-4 text-left">
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white dark:text-neutral-200"
               >Payment</a>
             </p>
            
@@ -94,11 +94,11 @@ export default function Footer () {
               Useful links
             </h6>
             <p className="mb-4 text-left">
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white dark:text-neutral-200"
               >About Us</a>
             </p>
             <p className="mb-4 text-left">
-              <a className="text-neutral-600 dark:text-neutral-200"
+              <a className="text-white dark:text-neutral-200"
               >Support</a>
             </p>
           </div>
@@ -156,7 +156,7 @@ export default function Footer () {
       <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
         <span>© 2023 Copyright: Event Share.</span>
       </div>
-    </div>
+    </footer>
     </>
   );
 }
