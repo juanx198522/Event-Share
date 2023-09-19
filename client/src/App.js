@@ -10,8 +10,8 @@ import Events from './pages/Events'
 import MyEvent from './pages/MyEvent'
 import Booking from './pages/Booking'
 import Register from './pages/Register'
-import Footer from './components/Footer'
-// import Profile from './pages/Profile'
+// import Footer from './components/Footer'
+
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -54,9 +54,9 @@ function App() {
             <Route path='/booking' element={<Booking />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            {/* <Route path='/profile' element={<Profile />} /> */}
+           
           </Routes>
-          <Footer/>
+          {/* <Footer/> */}
         </Router>
       </div>
     </ApolloProvider>
